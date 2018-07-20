@@ -14,8 +14,7 @@ SELECT country_id, country
 FROM country
 WHERE country IN ('Afghanistan', 'Bangladesh','China');
 
-alter table actor add middle_name varchar(50);
-#need to insert the column into the correct position but seems to be very difficult 
+alter table actor add middle_name varchar(50) after first_name;
 ALTER TABLE actor modify COLUMN middle_name blob;
 alter table actor drop column middle_name;
 
@@ -46,7 +45,7 @@ SELECT staff.first_name, staff.last_name, address.address
 FROM staff 
 INNER JOIN address 
 ON (staff.address_id = address.address_id);
-# it doesn't return anything
+
 
 #6b. Use JOIN to display the total amount rung up by each staff member in August of 2005. Use tables staff and payment.
 
@@ -196,10 +195,6 @@ limit 5;
 select * from top_5_genres;
 
 drop view top_5_genres;
-
-
-
-
 
 
 
